@@ -1,0 +1,26 @@
+## Media Store ##
+enable_media_repo: true
+media_store_path: "data/media/"
+uploads_path: "data/uploads_tmp/"
+max_upload_size: 300M
+max_image_pixels: 32M
+dynamic_thumbnails: true
+
+# List of thumbnails to precalculate when an image is uploaded.
+#
+#thumbnail_sizes:
+#  - width: 32
+#    height: 32
+#    method: crop
+#  - width: 96
+#    height: 96
+#    method: crop
+#  - width: 320
+#    height: 240
+#    method: scale
+#  - width: 640
+#    height: 480
+#    method: scale
+#  - width: 800
+#    height: 600
+#    method: scale

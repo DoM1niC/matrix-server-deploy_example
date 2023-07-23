@@ -1,0 +1,15 @@
+## Experimental Features ##
+experimental_features:
+  msc3026_enabled: true
+  msc3266_enabled: true
+  msc2815_enabled: true
+  msc3391_enabled: true
+  msc3881_enabled: true
+  msc3773_enabled: true
+  msc3874_enabled: true
+  msc3912_enabled: true
+  msc3967_enabled: true
+  msc3970_enabled: true
+  msc3882_enabled: true
+  msc3981_enabled: true
+  msc3886_endpoint: /_synapse/client/org.matrix.msc3886/rendezvous

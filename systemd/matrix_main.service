@@ -1,0 +1,19 @@
+[Unit]
+Description=Matrix Synapse
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Environment=SYNAPSE_ASYNC_IO_REACTOR=1
+User=root
+Group=root
+WorkingDirectory=/opt/matrix
+ExecStartPre=/opt/matrix/bin/python -m synapse.app.homeserver --config-path=conf/config.yaml --config-path=conf/workers/main.yaml --config-path=conf/conf.d/ --generate-keys
+ExecStart=/opt/matrix/bin/python -m synapse.app.homeserver --config-path=conf/config.yaml --config-path=conf/workers/main.yaml --config-path=conf/conf.d/
+Restart=always
+RestartSec=3s
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target
+

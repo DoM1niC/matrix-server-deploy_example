@@ -1,0 +1,271 @@
+# vim:ft=yaml
+
+## General ##
+daemonize: false
+
+server_name: "domain.tld"
+#pid_file: 
+#web_client_location: https://domain.tld or subdomain.domain.tld/
+public_baseurl: https://domain.tld or subdomain.domain.tld/
+#default_identity_server: https://identity.domain.tld
+admin_contact: 'mailto:support@domain.tld'
+report_stats: false
+#report_stats_endpoint: https://example.com/report-usage-stats/push
+serve_server_wellknown: false
+soft_file_limit: 0
+require_auth_for_profile_requests: false
+enable_set_avatar_url: true
+enable_set_displayname: true
+enable_3pid_changes: true
+#gc_thresholds: [700, 10, 10]
+presence:
+    enabled: false
+
+## Timeline ##
+enable_search: true
+dummy_events_threshold: 10
+filter_timeline_limit: 100
+
+## User Searching ##
+user_directory:
+  enabled: true
+  search_all_users: false
+  prefer_local_users: true
+
+# Metrics / Statistics ##
+enable_metrics: false
+metrics_flags:
+    known_servers: false
+stats:
+   enabled: true
+track_appservice_user_ips: false
+user_ips_max_age: 7d
+
+## Push ##
+push:
+  include_content: true
+  group_unread_count_by_room: true
+
+## Registration ##
+enable_registration: true
+registration_shared_secret: ""
+enable_3pid_lookup: false
+disable_msisdn_registration: true
+registration_requires_token: false
+enable_registration_without_verification: true
+#registrations_require_3pid:
+#  - email
+#  - msisdn
+bcrypt_rounds: 12
+allow_guest_access: false
+
+## Privacy Policy ##
+user_consent:
+  template_dir: conf/templates/
+  version: 1.0
+  #server_notice_content:
+  #  msgtype: m.text
+  #  body: >-
+  #    To continue using this homeserver you must review and agree to the
+  #    terms and conditions at %(consent_uri)s
+  #send_server_notice_to_guests: true
+  #block_events_error: >-
+  #  To continue using this homeserver you must review and agree to the
+  #  terms and conditions at %(consent_uri)s
+  require_at_registration: true
+  policy_name: Privacy Policy / Datenschutz
+
+## Room Stuff ##
+enable_room_list_search: true
+allow_public_rooms_without_auth: false
+default_room_version: "10"
+include_profile_data_on_invite: true
+block_non_admin_invites: false
+require_membership_for_aliases: true
+allow_per_room_profiles: true
+forget_rooms_on_leave: true
+encryption_enabled_by_default_for_room_type: "off"
+limit_remote_rooms:
+  enabled: false
+#  complexity: 1.0
+#  complexity_error: "This room is too complex."
+room_prejoin_state:
+   disable_default_event_types: false
+
+## Autojoin Rooms ##    
+autocreate_auto_join_rooms: false
+auto_join_rooms_for_guests: false
+#auto_join_rooms:
+#  - "#welcome:domain.tld"
+#  - "#support:domain.tld"
+
+## URL Preview ##
+url_preview_enabled: true
+max_spider_size: 10M
+url_preview_ip_range_blacklist:
+  # - '127.0.0.0/8'
+  # - '10.0.0.0/8'
+  # - '172.16.0.0/12'
+  # - '192.168.0.0/16'
+  # - '100.64.0.0/10'
+  # - '169.254.0.0/16'
+  # - '::1/128'
+  # - 'fe80::/64'
+  # - 'fc00::/7'
+#url_preview_ip_range_whitelist:
+#   - ''
+
+## Caching ##
+caches:
+  global_factor: 2.0
+  per_cache_factors:
+    get_users_in_room: 5.0
+event_cache_size: 10K
+
+## Captcha ##
+enable_registration_captcha: false
+#recaptcha_public_key: ""
+#recaptcha_private_key: ""
+#captcha_bypass_secret: "YOUR_SECRET_HERE"
+#recaptcha_siteverify_api: "https://www.recaptcha.net/recaptcha/api/siteverify"
+
+#account_threepid_delegates:
+    #email: https://identity.domain.tld
+    #msisdn: http://localhost:8090  # Delegate SMS sending to this local process
+
+## Key Stuff ##
+signing_key_path: "data/signing.key"
+key_refresh_interval: 1d
+suppress_key_server_warning: true
+trusted_key_servers:
+  - server_name: "domain.tld"
+  - server_name: "matrix.org"
+  - server_name: "element.io"
+trusted_third_party_id_servers:
+  - domain.tld
+
+## Auth ##
+password_config:
+   enabled: true
+   localdb_enabled: true
+   policy:
+      enabled: false
+      minimum_length: 8
+      require_digit: true
+      require_symbol: false
+      require_lowercase: true
+      require_uppercase: true
+
+## Retention Policy ##
+redaction_retention_period: 7d
+retention:
+  enabled: false
+
+  default_policy:
+    min_lifetime: 1d
+    max_lifetime: 2y
+  allowed_lifetime_min: 1d
+  allowed_lifetime_max: 2y
+
+  purge_jobs:
+    - longest_max_lifetime: 1h
+      interval: 30m
+    - shortest_max_lifetime: 1h
+      longest_max_lifetime: 12h
+      interval: 1h
+    - shortest_max_lifetime: 12h
+      longest_max_lifetime: 1d
+      interval: 12h
+    - shortest_max_lifetime: 1d
+      longest_max_lifetime: 2y
+      interval: 24h
+
+# Global blocking
+#
+#hs_disabled: false
+#hs_disabled_message: 'Human readable reason for why the HS is blocked'
+
+## Server Notices ##
+server_notices:
+  system_mxid_localpart: server
+  system_mxid_display_name: "Server Notices"
+  #system_mxid_avatar_url: "mxc://server.com/oumMVlgDnLYFaPVkExemNVVZ"
+  room_name: "Server Notices"
+
+## Ratelimiting ##
+
+rc_message:
+  per_second: 0.2
+  burst_count: 10
+
+rc_registration:
+  per_second: 0.17
+  burst_count: 3
+
+rc_login:
+  address:
+    per_second: 0.17
+    burst_count: 3
+  account:
+    per_second: 0.17
+    burst_count: 3
+  failed_attempts:
+    per_second: 0.17
+    burst_count: 3
+
+rc_admin_redaction:
+  per_second: 1
+  burst_count: 50
+
+rc_federation:
+  window_size: 1000
+  sleep_limit: 10
+  sleep_delay: 500
+  reject_limit: 50
+  concurrent: 3
+
+#room_list_publication_rules:
+#  - user_id: "*"
+#    alias: "*"
+#    room_id: "*"
+#    action: allow
+
+## Logging ##
+#log_config: "/home/opt/matrix/localhost.log.config"
+# loggers:
+#    # [...]
+#    ldap3:
+#      level: DEBUG
+#    ldap_auth_provider:
+#      level: DEBUG
+
+## E-Mail Sending ##
+#email:
+#  smtp_host: smtp.domain.tld
+#  smtp_port: 25
+#  smtp_user: "service"
+#  smtp_pass: ""
+
+#  require_transport_security: false
+#  enable_tls: false
+
+#  notif_from: "%(app)s <noreply@domain.tld>"
+#  app_name: "My cool Matrix Server"
+#  enable_notifs: false
+#  notif_for_new_users: true
+#  client_base_url: "https://domain.tld or subdomain.domain.tld"
+
+#  validation_token_lifetime: 1h
+#  invite_client_location: https://domain.tld or subdomain.domain.tld
+#  subjects:
+#    message_from_person_in_room: "[%(app)s] Du hast eine Nachricht erhalten von %(person)s in dem Raum %(room)s ..."
+#    message_from_person: "[%(app)s] Du hast eine Nachricht erhalten von %(person)s..."
+#    messages_from_person: "[%(app)s] Du hast Nachrichten erhalten von %(person)s..."
+#    messages_in_room: "[%(app)s] Du hast Nachrichten erhalten in dem Raum %(room)s..."
+#    messages_in_room_and_others: "[%(app)s] Du hast Nachrichten erhalten in dem Raum %(room)s und weiteren..."
+#    messages_from_person_and_others: "[%(app)s] Du hast Nachrichten erhalten von %(person)s und weiteren..."
+#    invite_from_person_to_room: "[%(app)s] %(person)s hat dich eingeladen in den Raum %(room)s teilzunehmen."
+#    invite_from_person: "[%(app)s] %(person)s hat dich eingeladen."
+#    password_reset: "[%(app)s] Passwort zurücksetzen"
+#    email_validation: "[%(app)s] bestätige deine E-Mail"
+

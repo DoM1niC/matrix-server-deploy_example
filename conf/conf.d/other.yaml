@@ -1,0 +1,5 @@
+## Other ##
+opentracing:
+    enabled: false
+acme:
+    enabled: false

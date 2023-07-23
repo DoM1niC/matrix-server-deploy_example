@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Signal Bridge
+After=matrix_main.service
+After=signald.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/signal
+ExecStart=/opt/matrix/appservices/signal/bin/python -m mautrix_signal -c config.yaml
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

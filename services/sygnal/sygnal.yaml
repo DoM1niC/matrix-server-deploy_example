@@ -1,0 +1,92 @@
+## Logging #
+log:
+  setup:
+    version: 1
+    formatters:
+      normal:
+        format: "%(asctime)s [%(process)d] %(levelname)-5s %(name)s %(message)s"
+    handlers:
+      # This handler prints to Standard Error
+      stderr:
+        class: "logging.StreamHandler"
+        formatter: "normal"
+        stream: "ext://sys.stderr"
+
+      # This handler prints to Standard Output.
+      stdout:
+        class: "logging.StreamHandler"
+        formatter: "normal"
+        stream: "ext://sys.stdout"
+
+      file:
+        class: "logging.handlers.WatchedFileHandler"
+        formatter: "normal"
+        filename: "./sygnal.log"
+    loggers:
+      sygnal.access:
+        propagate: false
+        handlers: ["stdout"]
+        level: "INFO"
+
+      sygnal:
+        propagate: false
+        handlers: ["stderr"]
+
+    root:
+      handlers: ["stderr"]
+      level: "INFO"
+
+    disable_existing_loggers: false
+
+
+  access:
+    x_forwarded_for: true
+
+## HTTP Server (Matrix Push Gateway API) #
+#
+http:
+  bind_addresses: ['127.0.0.1']
+  port: 8004
+#proxy: 'http://user:secret@prox:8080'
+
+## Metrics #
+metrics:
+  ## Prometheus #
+  prometheus:
+    enabled: false
+    address: '127.0.0.1'
+    port: 8000
+
+  ## OpenTracing #
+  opentracing:
+    enabled: false
+    implementation: jaeger
+    service_name: sygnal
+
+    jaeger:
+      sampler:
+        type: 'const'
+        param: 1
+#        local_agent:
+#          reporting_host: '127.0.0.1'
+#          reporting_port:
+      logging: true
+
+  ## Sentry #
+  sentry:
+    enabled: false
+    #dsn: "https://<key>@sentry.example.org/<project>"
+
+## Pushkins/Apps #
+apps:
+  # This is an example GCM/FCM push configuration.
+  #
+  im.vector.app:
+    type: gcm
+    api_key: "*****************************"
+    max_connections: 100
+    #inflight_request_limit: 512
+
+  #  #fcm_options:
+  #  #  content_available: true
+  #  #  mutable_content: true

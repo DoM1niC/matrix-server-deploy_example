@@ -1,0 +1,32 @@
+## Modules ##
+modules:
+  # - module: matrix_http_rendezvous_synapse.SynapseRendezvousModule
+  #   config:
+  #     prefix: /_synapse/client/org.matrix.msc3886/rendezvous
+  # - module: "rest_auth_provider.RestAuthProvider"
+  #   config:
+  #     endpoint: "https://domain.tld"
+  #     policy:
+  #       registration:
+  #         username:
+  #           enforceLowercase: true
+  #         profile:
+  #           name: false
+  #       login:
+  #         profile:
+  #           name: false
+  # - module: "ldap_auth_provider.LdapAuthProviderModule"
+  #   config:
+  #     enabled: true
+  #     uri: "ldap://127.0.0.1:389"
+  #     base: "ou=Users,dc=world"
+  #     attributes:
+  #         uid: "cn"
+  #         mail: "mail"
+  #         name: "givenName"
+  #     #bind_dn: "cn=admin,dc=world"
+  #     #bind_password: ""
+  #     filter: "(o=true)"
+  #     start_tls: false
+  #     tls_options:
+  #        validate: false

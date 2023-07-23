@@ -1,0 +1,10 @@
+## Appservices ##
+app_service_config_files:
+  # - appservices/webhooks/registration.yaml
+  # - appservices/whatsapp/registration.yaml
+  # - appservices/facebook/registration.yaml
+  # - appservices/irc/registration.yaml
+  # - appservices/instagram/registration.yaml
+  # - appservices/signal/registration.yaml
+  # - appservices/telegram/registration.yaml
+  # - appservices/discord/registration.yaml

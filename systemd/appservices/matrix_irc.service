@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix IRC Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/irc
+ExecStart=/root/.nvm/versions/node/v16.19.0/bin/node app.js -c config.yaml -f registration.yaml -p 8011
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target

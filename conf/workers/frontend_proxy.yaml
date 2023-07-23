@@ -1,0 +1,12 @@
+worker_app: synapse.app.generic_worker
+worker_name: frontend_proxy
+
+worker_listeners:
+  - type: http
+    bind_address: '127.0.0.1'
+    port: 9004
+    x_forwarded: true
+    resources:
+      - names: [client, replication]
+
+worker_daemonize: False

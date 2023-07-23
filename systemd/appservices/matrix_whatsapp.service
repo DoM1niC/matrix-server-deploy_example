@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Matrix WhatsApp Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/whatsapp
+ExecStart=/opt/matrix/appservices/whatsapp/mautrix-whatsapp -c config.yaml
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

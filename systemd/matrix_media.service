@@ -1,0 +1,15 @@
+[Unit]
+Description=Matrix synapse.app.media_repository Worker
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix
+ExecStart=/opt/matrix/bin/python -m synapse.app.media_repository --config-path=conf/config.yaml --config-path=conf/conf.d/ --config-path=conf/workers/media.yaml
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
+

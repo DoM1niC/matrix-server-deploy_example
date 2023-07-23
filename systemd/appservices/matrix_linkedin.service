@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Matrix LinkedIn Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/linkedin
+ExecStart=/opt/matrix/appservices/linkedin/bin/python -m linkedin_matrix
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

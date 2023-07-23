@@ -1,0 +1,12 @@
+worker_app: synapse.app.media_repository
+worker_name: media_worker
+
+worker_listeners:
+  - type: http
+    port: 9003
+    bind_address: '127.0.0.1'
+    x_forwarded: true
+    resources:
+      - names: [media, replication]
+
+worker_daemonize: False

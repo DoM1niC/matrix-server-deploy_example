@@ -1,0 +1,14 @@
+[Unit]
+Description=Matrix Bot
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/bots/maubot
+ExecStart=/opt/matrix/bots/maubot/bin/python -m maubot
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

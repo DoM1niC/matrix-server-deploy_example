@@ -1,0 +1,23 @@
+{
+	"default_server_config": {
+		"m.homeserver": {
+			"base_url": "https://domain.tld or subdomain.domain.tld",
+			"server_name": "domain.tld"
+		}
+	},
+	"livekit": {
+		"livekit_service_url": "https://sfu-jwt.domain.tld"
+	},
+	"posthog": {
+		"api_key": "",
+		"api_host": ""
+	},
+	"sentry": {
+		"environment": "",
+		"DSN": ""
+	},
+	"rageshake": {
+		"submit_url": ""
+	},
+	"eula": "https://domain.tld/about/privacy"
+}

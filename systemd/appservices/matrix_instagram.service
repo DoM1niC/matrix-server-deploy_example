@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Instagram Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/instagram
+ExecStart=/opt/matrix/appservices/instagram/bin/python -m mautrix_instagram
+Restart=on-failure
+RestartSec=5s
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

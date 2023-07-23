@@ -1,0 +1,18 @@
+[Unit]
+Description=Matrix Livekit jwt Service
+After=matrix_main.service
+
+[Service]
+Environment="LIVEKIT_URL=wss://sfu.domain.tld"
+Environment="LIVEKIT_KEY=prod"
+Environment="LIVEKIT_SECRET=*********************"
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/misc/livekit
+ExecStart=/opt/matrix/misc/livekit/lk-jwt-service
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
+

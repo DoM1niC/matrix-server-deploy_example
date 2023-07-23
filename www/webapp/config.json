@@ -1,0 +1,107 @@
+{
+	"default_server_name": "domain.tld",
+	"brand": "My cool Matrix Server",
+	"disable_custom_urls": true,
+	"disable_guests": false,
+	"disable_login_language_selector": false,
+	"disable_3pid_login": true,
+	"bug_report_endpoint_url": "https://domain.tld/support",
+	"default_country_code": "DE",
+	"show_labs_settings": false,
+	"map_style_url": "https://api.maptiler.com/maps/streets/style.json?key=ebwwNjflpWVZQBxYdLdU",
+	"element_call_url": "https://call.domain.tld",
+	"login_with_qr": {
+		"reciprocate": {
+			"enable_showing": true
+		}
+	},
+	"voip": {
+		"obey_asserted_identity": true
+	},
+	"features": {
+		"feature_pinning": true,
+		"feature_video_rooms": true,
+		"feature_group_calls": true,
+		"feature_voice_broadcast": false,
+		"feature_element_call_video_rooms": true,
+		"feature_state_counters": true,
+		"feature_report_to_moderators": true,
+		"feature_custom_themes": false,
+		"feature_dehydration": false,
+		"feature_bridge_state": false,
+		"feature_mjolnir": false,
+		"feature_wysiwyg_composer": false,
+		"feature_sliding_sync": false,
+		"feature_jump_to_date": true,
+		"feature_html_topic": true,
+		"feature_right_panel_default_open": false,
+		"FTUE.userOnboardingButton": true,
+		"feature_location_share_live": true,
+		"feature_exploring_public_spaces": true,
+		"feature_msc3531_hide_messages_pending_moderation": true,
+		"feature_intentional_mentions": true,
+		"feature_ask_to_join": true,
+		"feature_dynamic_room_predecessors": true
+	},
+	"default_federate": true,
+	"default_theme": "dark",
+	"default_language": "de",
+	"room_directory": {
+		"servers": [
+			"domain.tld"
+		]
+	},
+	"embedded_pages": {
+		"welcome_url": ""
+	},
+	"setting_defaults": {
+		"breadcrumbs": true,
+		"autoplayGifs": true,
+		"autoplayVideo": false,
+		"ctrlFForSearch": true,
+		"enableWidgetScreenshots": true,
+		"useOnlyCurrentProfiles": true,
+		"UIFeature.feedback": false,
+		"UIFeature.passwordReset": false,
+		"UIFeature.registration": true,
+		"UIFeature.identityServer": false,
+		"UIFeature.thirdPartyId": false,
+		"UIFeature.URLPreviews": true,
+		"UIFeature.widgets": true
+	},
+	"enable_presence_by_hs_url": {
+		"https://matrix.org": false,
+		"https://matrix-client.matrix.org": false
+	},
+	"branding": {
+		"welcome_background_url": "themes/element/img/backgrounds/lake.jpg",
+		"auth_header_logo_url": "themes/element/img/logos/logo.png",
+		"auth_footer_links": [
+			{
+				"text": "About",
+				"url": "//domain.tld/about"
+			},
+			{
+				"text": "Impressum",
+				"url": "//domain.tld/about/#impress"
+			},
+			{
+				"text": "Datenschutz",
+				"url": "//domain.tld/about/#privacy"
+			}
+		]
+	},
+	"jitsi": {
+		"preferred_domain": "meet.domain.tld"
+	},
+	"terms_and_conditions_links": [
+		{
+			"url": "https://domain.tld/about/impress",
+			"text": "Impressum"
+		},
+		{
+			"url": "https://domain.tld/about/privacy",
+			"text": "Datenschutzerklärung"
+		}
+	]
+}

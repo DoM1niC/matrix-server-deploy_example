@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Push Helper
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/misc/sygnal
+ExecStart=/opt/matrix/misc/sygnal/bin/python -m sygnal.sygnal
+Restart=always
+RestartSec=5s
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

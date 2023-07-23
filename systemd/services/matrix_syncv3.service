@@ -1,0 +1,19 @@
+[Unit]
+Description=Matrix sliding Sync
+After=matrix_main.service
+
+[Service]
+Environment="SYNCV3_SERVER=http://127.0.0.1"
+Environment="SYNCV3_SECRET=************************"
+Environment="SYNCV3_BINDADDR=127.0.0.1:8009"
+Environment="SYNCV3_DB=host=127.0.0.1 user=matrix password=************* dbname=matrix_syncv3 sslmode=disable"
+User=root
+Group=root
+WorkingDirectory=/opt/matrix
+ExecStart=/opt/matrix/misc/syncv3/syncv3
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
+

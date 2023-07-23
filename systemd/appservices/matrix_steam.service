@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Steam Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/steam
+ExecStart=/root/.nvm/versions/node/v12.22.12/bin/node build/index.js -c config.yaml -f registration.yaml
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

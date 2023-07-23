@@ -1,0 +1,12 @@
+worker_app: synapse.app.generic_worker
+worker_name: federation_reader
+
+worker_listeners:
+  - type: http
+    port: 9002
+    bind_address: '127.0.0.1'
+    x_forwarded: true
+    resources:
+      - names: [client, federation, replication]
+
+worker_daemonize: False

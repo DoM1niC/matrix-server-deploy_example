@@ -1,0 +1,4 @@
+worker_app: synapse.app.homeserver
+
+presence:
+    enabled: true

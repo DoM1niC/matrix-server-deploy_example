@@ -1,0 +1,15 @@
+worker_app: synapse.app.generic_worker
+worker_name: event_worker
+
+worker_listeners:
+  - type: http
+    bind_address: '127.0.0.1'
+    x_forwarded: true
+    port: 9007
+    resources:
+      - names: [client, replication]
+
+worker_daemonize: False
+
+presence:
+    enabled: true

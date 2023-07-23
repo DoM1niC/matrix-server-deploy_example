@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Facebook Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/facebook
+ExecStart=/opt/matrix/appservices/facebook/bin/python -m mautrix_facebook
+Restart=on-failure
+RestartSec=5s
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

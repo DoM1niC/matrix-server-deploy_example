@@ -1,0 +1,12 @@
+*.db
+.local
+.np
+.config
+.cache
+.ssh
+lost+found
+local
+lib
+/misc/uptime-kuma
+python
+/data/media

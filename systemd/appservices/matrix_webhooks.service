@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Webhooks Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/webhooks
+ExecStart=/root/.nvm/versions/node/v12.22.12/bin/node /opt/matrix/appservices/webhooks/index.js -p 8010 -c config/config.yaml -f registration.yaml
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+
+[Unit]
+Description=Matrix Telegram Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/telegram
+ExecStart=/opt/matrix/appservices/telegram/bin/python -m mautrix_telegram
+Restart=always
+RestartSec=5s
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

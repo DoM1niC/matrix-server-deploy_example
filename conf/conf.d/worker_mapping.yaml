@@ -1,0 +1,74 @@
+## Worker Mapping ##
+instance_map:
+  main:
+    host: 127.0.0.1
+    port: 3456
+    tls: false
+  client_worker:
+    host: 127.0.0.1
+    port: 9001
+    tls: false
+  event_worker:
+    host: 127.0.0.1
+    port: 9007
+    tls: false
+  frontend_proxy:
+    host: 127.0.0.1
+    port: 9004
+    tls: false
+  federation_reader:
+    host: 127.0.0.1
+    port: 9002
+    tls: false
+  federation_sender:
+    host: 127.0.0.1
+    port: 7007
+    tls: false
+  appservice_worker:
+    host: 127.0.0.1
+    port: 7009
+    tls: false
+  media_worker:
+    host: 127.0.0.1
+    port: 9003
+    tls: false
+  pusher_worker:
+    host: 127.0.0.1
+    port: 7006
+    tls: false
+  sync_worker:
+    host: 127.0.0.1
+    port: 9006
+    tls: false
+  userdir_worker:
+    host: 127.0.0.1
+    port: 9005
+    tls: false
+  background_worker:
+    host: 127.0.0.1
+    port: 7010
+    tls: false
+
+stream_writers:
+  events:
+    - event_worker
+  typing:
+    - event_worker
+  to_device:
+    - event_worker
+  account_data:
+    - event_worker
+  receipts:
+    - event_worker
+  presence:
+    - event_worker
+
+federation_sender_instances:
+  - federation_sender
+pusher_instances:
+  - pusher_worker
+
+notify_appservices_from_worker: appservice_worker
+update_user_directory_from_worker: userdir_worker
+media_instance_running_background_jobs: media_worker
+run_background_tasks_on: background_worker

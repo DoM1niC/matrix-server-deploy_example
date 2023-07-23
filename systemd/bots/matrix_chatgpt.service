@@ -1,0 +1,15 @@
+[Unit]
+Description=Matrix ChatGPT Bot
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/bots/chatgpt
+ExecStart=/root/.nvm/versions/node/v18.16.0/bin/node dist/index.js
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

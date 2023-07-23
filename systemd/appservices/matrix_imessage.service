@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Matrix iMessage Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/appservices/imessage
+ExecStart=/opt/matrix/appservices/imessage/mautrix-imessage -c config.yaml
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

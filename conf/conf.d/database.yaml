@@ -1,0 +1,23 @@
+## Database ##
+
+# Postgres
+database:
+    name: psycopg2
+    args:
+        user: matrix
+        password: "********"
+        database: matrix
+        host: 10.0.0.3
+        cp_min: 5
+        cp_max: 10
+# SQLITE3
+  # Arguments to pass to the engine
+    #args:
+      # Path to the database
+      #database: "/opt/matrix/homeserver.db"
+      
+# Redis Cache
+redis:
+  enabled: true
+  host: 127.0.0.1
+  port: 6379

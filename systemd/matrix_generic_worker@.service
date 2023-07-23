@@ -1,0 +1,15 @@
+[Unit]
+Description=Matrix Synapse Workers
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix
+ExecStart=/opt/matrix/bin/python -m synapse.app.generic_worker --config-path=conf/config.yaml --config-path=conf/conf.d/ --config-path=conf/workers/%i.yaml
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,7 @@
+## TURN ##
+turn_uris: 
+  - "turn:turn.domain.tld?transport=udp"
+  - "turn:turn.domain.tld?transport=tcp"
+turn_shared_secret: "********************"
+turn_user_lifetime: "1h"
+turn_allow_guests: true

@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Matrix Websocket Proxy
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/bridges/wsproxy
+ExecStart=/opt/matrix/bridges/wsproxy/mautrix-wsproxy -config config.yaml
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

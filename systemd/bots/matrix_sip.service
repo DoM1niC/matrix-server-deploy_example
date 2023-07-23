@@ -1,0 +1,15 @@
+[Unit]
+Description=Matrix SIP Bridge
+After=matrix_main.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/matrix/bots/sip
+ExecStart=/root/.nvm/versions/node/v18.16.0/bin/node --experimental-specifier-resolution=node dist/index.js
+ExecStop=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
