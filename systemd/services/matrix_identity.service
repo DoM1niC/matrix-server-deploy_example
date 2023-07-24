@@ -6,8 +6,8 @@ After=matrix_main.service
 [Service]
 User=root
 Group=root
-WorkingDirectory=/opt/matrix/misc/sydent
-ExecStart=/opt/matrix/misc/sydent/bin/python -m sydent.sydent
+WorkingDirectory=/opt/matrix/services/sydent
+ExecStart=/opt/matrix/services/sydent/bin/python -m sydent.sydent
 Restart=on-failure
 RestartSec=5s
 

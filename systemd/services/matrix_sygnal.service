@@ -6,8 +6,8 @@ After=matrix_main.service
 [Service]
 User=root
 Group=root
-WorkingDirectory=/opt/matrix/misc/sygnal
-ExecStart=/opt/matrix/misc/sygnal/bin/python -m sygnal.sygnal
+WorkingDirectory=/opt/matrix/services/sygnal
+ExecStart=/opt/matrix/services/sygnal/bin/python -m sygnal.sygnal
 Restart=always
 RestartSec=5s
 PrivateTmp=yes

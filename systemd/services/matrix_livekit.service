@@ -5,8 +5,8 @@ After=matrix_main.service
 [Service]
 User=root
 Group=root
-WorkingDirectory=/opt/matrix/misc/livekit
-ExecStart=/opt/matrix/misc/livekit/livekit-server --config config.yaml
+WorkingDirectory=/opt/matrix/services/livekit
+ExecStart=/opt/matrix/services/livekit/livekit-server --config config.yaml
 Restart=always
 RestartSec=5s
 

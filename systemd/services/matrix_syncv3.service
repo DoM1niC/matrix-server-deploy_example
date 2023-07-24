@@ -10,7 +10,7 @@ Environment="SYNCV3_DB=host=127.0.0.1 user=matrix password=************* dbname=
 User=root
 Group=root
 WorkingDirectory=/opt/matrix
-ExecStart=/opt/matrix/misc/syncv3/syncv3
+ExecStart=/opt/matrix/services/syncv3/syncv3
 Restart=always
 RestartSec=3s
 

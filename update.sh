@@ -28,7 +28,7 @@ case $1 in
     git reset --hard origin/master
     git pull origin master
     systemctl reload nginx.service
-    chmod 777 $MATRIX_PATH/misc/ -R
+    chmod 777 $MATRIX_PATH/services/ -R
     systemctl restart matrix_livekit.service
     systemctl restart matrix_livekit_auth.service
     #systemctl restart matrix_syncv3.service
@@ -60,7 +60,7 @@ case $1 in
 
   sydent)
     echo "Update Identify Service Sydent"
-    cd $MATRIX_PATH/misc/sydent/
+    cd $MATRIX_PATH/services/sydent/
     $clean; $install
     source bin/activate;
     pip install --upgrade matrix-sydent
@@ -69,9 +69,9 @@ case $1 in
 
   sygnal)
     echo "Update Sygnal Push Gateway"
-    cd $MATRIX_PATH/misc/sygnal/
+    cd $MATRIX_PATH/services/sygnal/
     $clean; $install; \
-    source $MATRIX_PATH/misc/sygnal/bin/activate; \
+    source $MATRIX_PATH/services/sygnal/bin/activate; \
     pip install --upgrade pip; \
     pip install --upgrade setuptools; \
     pip install --upgrade opentracing; \

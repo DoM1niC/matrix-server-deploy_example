@@ -8,8 +8,8 @@ Environment="LIVEKIT_KEY=prod"
 Environment="LIVEKIT_SECRET=*********************"
 User=root
 Group=root
-WorkingDirectory=/opt/matrix/misc/livekit
-ExecStart=/opt/matrix/misc/livekit/lk-jwt-service
+WorkingDirectory=/opt/matrix/services/livekit
+ExecStart=/opt/matrix/services/livekit/lk-jwt-service
 Restart=always
 RestartSec=3s
 
