@@ -1,5 +1,6 @@
 ## Experimental Features ##
 experimental_features:
+  msc2697_enabled: true
   msc3026_enabled: true
   msc3266_enabled: true
   msc2815_enabled: true
