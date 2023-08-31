@@ -34,7 +34,7 @@ config.json anpassen.
   },
 ```
 ## Dienste starten (Systemd)
-#### Services für Systemd unter `systemd/services/matrix_livekit.service` & `matrix_livekit_auth.service` in `/etc/lib/systemd/system` kopieren.
+Services für Systemd unter `systemd/services/matrix_livekit.service` & `matrix_livekit_auth.service` in `/etc/lib/systemd/system` kopieren.
 ### matrix_livekit_auth.service anpassen (Key & Subdomain).
 ```
 Environment="LIVEKIT_URL=wss://sfu.domain.tld"
