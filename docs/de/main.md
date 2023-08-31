@@ -24,7 +24,7 @@ Die `update.sh` kann verschiedene Appservices oder Synapse updaten z.B. `update.
 
 In dem Ordner namens `buildung` findet ihr eine `build.sh` damit könnt ihr das gesamte Matrix Ökosystem selbst zusammenbauen (kompilieren).
 
-# MGINX
+# NGINX
 Verlinkung in den `vhosts` durch z.B. Symlink erforderlich siehe `nginx` Ordner.
 - matrix.conf
 - call.conf
