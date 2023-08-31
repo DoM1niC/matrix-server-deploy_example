@@ -20,7 +20,7 @@ Die Worker können mit einer passenden Systemd Service Datei dynamisch (generic)
 - matrix_generic_worker@.service (generic Worker)
 - matrix_media.service (Media Worker)
 
-Befehle siehe `cli.sh` können mit `start / restart / enable` (autostart) gestartet werden
+Dienste siehe `cli.sh` können mit `start / restart / enable` (autostart) gestartet werden.
 
 ## Beispiel aus meiner Umgebung 
 ### Main (Synapse)
