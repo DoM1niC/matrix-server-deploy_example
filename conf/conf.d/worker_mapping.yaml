@@ -10,43 +10,39 @@ instance_map:
     tls: false
   event_worker:
     host: 127.0.0.1
-    port: 9007
+    port: 9002
     tls: false
   frontend_proxy:
     host: 127.0.0.1
-    port: 9004
+    port: 9003
     tls: false
   federation_reader:
     host: 127.0.0.1
-    port: 9002
+    port: 9004
     tls: false
   federation_sender:
     host: 127.0.0.1
-    port: 7007
+    port: 9005
     tls: false
   appservice_worker:
     host: 127.0.0.1
-    port: 7009
+    port: 9006
     tls: false
   media_worker:
     host: 127.0.0.1
-    port: 9003
+    port: 9007
     tls: false
   pusher_worker:
     host: 127.0.0.1
-    port: 7006
+    port: 9008
     tls: false
   sync_worker:
     host: 127.0.0.1
-    port: 9006
+    port: 9009
     tls: false
   userdir_worker:
     host: 127.0.0.1
-    port: 9005
-    tls: false
-  background_worker:
-    host: 127.0.0.1
-    port: 7010
+    port: 9010
     tls: false
 
 stream_writers:
@@ -67,6 +63,9 @@ federation_sender_instances:
   - federation_sender
 pusher_instances:
   - pusher_worker
+# outbound_federation_restricted_to:
+#   - federation_sender
+#worker_replication_secret: 
 
 notify_appservices_from_worker: appservice_worker
 update_user_directory_from_worker: userdir_worker

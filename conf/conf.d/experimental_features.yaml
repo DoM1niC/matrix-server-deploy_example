@@ -1,6 +1,5 @@
 ## Experimental Features ##
 experimental_features:
-  msc2697_enabled: true
   msc3026_enabled: true
   msc3266_enabled: true
   msc2815_enabled: true
@@ -12,5 +11,5 @@ experimental_features:
   msc3967_enabled: true
   msc3970_enabled: true
   msc3882_enabled: true
-  msc3981_enabled: true
-  msc3886_endpoint: /_synapse/client/org.matrix.msc3886/rendezvous
+  msc3981_recurse_relations: true
+  #msc3886_endpoint: /_synapse/client/org.matrix.msc3886/rendezvous

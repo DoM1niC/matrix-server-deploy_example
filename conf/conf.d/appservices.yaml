@@ -1,4 +1,5 @@
 ## Appservices ##
+use_appservice_legacy_authorization: false
 app_service_config_files:
   # - appservices/webhooks/registration.yaml
   # - appservices/whatsapp/registration.yaml

@@ -4,7 +4,7 @@ worker_name: pusher_worker
 worker_listeners:
     - type: http
       bind_address: '127.0.0.1'
-      port: 7006
+      port: 9008
       resources:
         - names: [metrics, replication]
 

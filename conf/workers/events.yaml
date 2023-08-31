@@ -5,7 +5,7 @@ worker_listeners:
   - type: http
     bind_address: '127.0.0.1'
     x_forwarded: true
-    port: 9007
+    port: 9002
     resources:
       - names: [client, replication]
 

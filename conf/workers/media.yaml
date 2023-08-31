@@ -3,7 +3,7 @@ worker_name: media_worker
 
 worker_listeners:
   - type: http
-    port: 9003
+    port: 9007
     bind_address: '127.0.0.1'
     x_forwarded: true
     resources:

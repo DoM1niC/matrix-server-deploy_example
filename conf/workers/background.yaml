@@ -4,9 +4,9 @@ worker_name: background_worker
 worker_listeners:
     - type: http
       bind_address: '127.0.0.1'
-      port: 7010
+      port: 9011
       x_forwarded: true
       resources:
-        - names: [metrics, replication]
-          
+        - names: [metrics]
+    
 worker_daemonize: false

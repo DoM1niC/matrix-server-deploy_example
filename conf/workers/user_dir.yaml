@@ -4,7 +4,7 @@ worker_name: userdir_worker
 worker_listeners:
   - type: http
     bind_address: '127.0.0.1'
-    port: 9005
+    port: 9010
     x_forwarded: true
     resources:
       - names: [client, replication]

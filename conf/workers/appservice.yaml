@@ -4,7 +4,7 @@ worker_name: appservice_worker
 worker_listeners:
     - type: http
       bind_address: '127.0.0.1'
-      port: 7009
+      port: 9006
       x_forwarded: true
       resources:
         - names: [metrics, replication]

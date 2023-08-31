@@ -4,7 +4,7 @@ worker_name: sync_worker
 worker_listeners:
   - type: http
     bind_address: '127.0.0.1'
-    port: 9006
+    port: 9009
     x_forwarded: true
     resources:
       - names: [client, replication]

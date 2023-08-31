@@ -4,7 +4,7 @@ worker_name: federation_sender
 worker_listeners:
     - type: http
       bind_address: '127.0.0.1'
-      port: 7007
+      port: 9005
       resources:
         - names: [metrics, replication]
 
