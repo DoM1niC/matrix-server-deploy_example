@@ -23,7 +23,19 @@ Der JWT Service vergibt für den Livekit Server passenden OpenIDs, sprich dieser
 die erstelle Binary `lk-jwt-service` unter `services/livekit` einfügen. 
 
 Der Dienst läuft dann unter `127.0.0.1:8080`, bekommt dann mit der NGINX Config einen **proxy_pass** zugewiesen für eine Subdomain z.B. sfu-jwt.domain.tld.
-
+## Synapse
+unter `listeners` muss die Ressource `openid` mit angegeben werden z.B.
+```
+listeners:
+  - type: http
+    x_forwarded: true
+    bind_address: '127.0.0.1'
+    port: 8008
+    resources:
+      - names: 
+        - client
+        - openid
+```
 ## NGINX
 unter `nginx/call.conf` müssen die Subdomains angepasst werden, in meinem Beispiel verwende ich für Livekit das Prefix `sfu.`, die `call.conf` muss in **VHosts** kopiert werden, damit NGINX diese auch lädt.
 ## Element Call
