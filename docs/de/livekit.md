@@ -37,7 +37,7 @@ listeners:
         - openid
 ```
 ## NGINX
-unter `nginx/call.conf` müssen die Subdomains angepasst werden, in meinem Beispiel verwende ich für Livekit das Prefix `sfu.`, die `call.conf` muss in **VHosts** kopiert werden, damit NGINX diese auch lädt.
+unter `nginx/call.conf` müssen die Subdomains angepasst werden, in meinem Beispiel verwende ich für Livekit das Prefix `sfu.`, die `call.conf` muss in die **vhosts** kopiert werden.
 ## Element Call
 config.json anpassen.
 ```
