@@ -5,6 +5,7 @@
 - NGINX Webserver
 ## Ports
 UDP: 50100 - 50200
+
 TCP: 7880 / 8080 (nur localhost)
 ## Download
 Neuste Livekit Version: https://github.com/livekit/livekit/releases
