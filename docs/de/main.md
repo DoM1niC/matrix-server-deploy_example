@@ -9,7 +9,7 @@ meine Matrix Instanz läuft mit Linux (Arch), daher wird in diesem Deployment Sy
 
 Die `cli.sh` kann mit gängigen Systemd Aktionen angesprochen werden z.B. `start / stop / restart` usw.
 
-Die `systemd_setup.sh` kopiert euch die gängigen Service Dateien in eure Systemd angepasst kann dies via dem `systemd` Ordner.
+Die `systemd_setup.sh` kopiert euch die gängigen Service Dateien in eure **Systemd**, dies kann via dem `systemd` Ordner angepasst werden.
 
 Die `update.sh` kann verschiedene Appservices oder Synapse updaten z.B. `update.sh synapse`
 
