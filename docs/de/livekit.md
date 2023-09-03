@@ -16,7 +16,7 @@ Inhalt der livekit_1.x.x_linux_amd64.tar.gz in `services/livekit` entpacken & `c
 keys:
   prod: "**************************************"
 ```
-## JWT Service bauen
+## JWT Service
 Der JWT Service vergibt für den Livekit Server passenden OpenIDs, sprich dieser kleine Service authentifiziert das Matrix Ökosystem mit dem Livekit Server. Die Verbindungen zum eigentlichen Livekit Server, werden von diesem Services weitergeleitet z.B. an `sfu.domain.tld` siehe **Systemd** Teil.
 
 `git clone https://github.com/vector-im/lk-jwt-service livekit-jwt-service` klonen und `buildung/build.sh livekit-jwt-service` ausführen um den JWT Service (Dockerless) zu bauen.
