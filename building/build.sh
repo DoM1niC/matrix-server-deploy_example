@@ -45,7 +45,7 @@ case $1 in
   call)
     pushd matrix-js-sdk
     git fetch orig
-    git reset --hard orig/livekit
+    git reset --hard orig/develop
     yarn link
     yarn install
     popd
