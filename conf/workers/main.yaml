@@ -2,3 +2,6 @@ worker_app: synapse.app.homeserver
 
 presence:
     enabled: true
+
+send_federation: false
+start_pushers: false

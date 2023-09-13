@@ -2,10 +2,16 @@ worker_app: synapse.app.generic_worker
 worker_name: pusher_worker
 
 worker_listeners:
-    - type: http
-      bind_address: '127.0.0.1'
-      port: 9008
-      resources:
-        - names: [metrics, replication]
+  - type: http
+    path: /opt/matrix/run/worker/pusher.sock
+    resources:
+      - names: [replication]
+
+  - type: http
+    bind_address: '127.0.0.1'
+    port: 9003
+    x_forwarded: true
+    resources:
+      - names: [metrics]
 
 worker_daemonize: false

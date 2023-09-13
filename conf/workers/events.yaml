@@ -3,9 +3,8 @@ worker_name: event_worker
 
 worker_listeners:
   - type: http
-    bind_address: '127.0.0.1'
+    path: /opt/matrix/run/worker/event.sock
     x_forwarded: true
-    port: 9002
     resources:
       - names: [client, replication]
 

@@ -2,11 +2,17 @@ worker_app: synapse.app.generic_worker
 worker_name: appservice_worker
 
 worker_listeners:
-    - type: http
-      bind_address: '127.0.0.1'
-      port: 9006
-      x_forwarded: true
-      resources:
-        - names: [metrics, replication]
+  - type: http
+    path: /opt/matrix/run/worker/appservice.sock
+    x_forwarded: true
+    resources:
+      - names: [replication]
+
+  - type: http
+    bind_address: '127.0.0.1'
+    port: 9001
+    x_forwarded: true
+    resources:
+      - names: [metrics]
 
 worker_daemonize: false

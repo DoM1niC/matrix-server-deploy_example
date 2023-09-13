@@ -1,18 +1,13 @@
 ## Listeners ##
 listeners:
-  - type: http
-    experimental_cors_msc3886: true
-    x_forwarded: true
-    bind_address: '127.0.0.1'
-    port: 8008
-    resources:
-      - names: 
-        - client
-        - openid
-  - type: http
-    bind_address: '127.0.0.1'
-    port: 3456
+  - path: /opt/matrix/run/main_client.sock
+    type: http
     x_forwarded: true
     resources:
-      - names: 
-        - replication
+      - names: [client, openid]
+
+  - type: http
+    path: /opt/matrix/run/main_replication.sock
+    x_forwarded: true
+    resources:  
+      - names: [replication]

@@ -2,11 +2,10 @@ worker_app: synapse.app.generic_worker
 worker_name: background_worker
 
 worker_listeners:
-    - type: http
-      bind_address: '127.0.0.1'
-      port: 9011
-      x_forwarded: true
-      resources:
-        - names: [metrics]
+  - type: http
+    bind_address: '127.0.0.1'
+    port: 9011
+    resources:
+      - names: [metrics]
     
 worker_daemonize: false

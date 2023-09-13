@@ -3,8 +3,7 @@ worker_name: media_worker
 
 worker_listeners:
   - type: http
-    port: 9007
-    bind_address: '127.0.0.1'
+    path: /opt/matrix/run/worker/media.sock
     x_forwarded: true
     resources:
       - names: [media, replication]

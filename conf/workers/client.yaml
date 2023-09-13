@@ -3,8 +3,7 @@ worker_name: client_worker
 
 worker_listeners:
   - type: http
-    bind_address: '127.0.0.1'
-    port: 9001
+    path: /opt/matrix/run/worker/client.sock
     x_forwarded: true
     resources:
       - names: [client, replication]

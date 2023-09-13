@@ -1,49 +1,27 @@
 ## Worker Mapping ##
 instance_map:
   main:
-    host: 127.0.0.1
-    port: 3456
-    tls: false
+    path: /opt/matrix/run/main_replication.sock
   client_worker:
-    host: 127.0.0.1
-    port: 9001
-    tls: false
+    path: /opt/matrix/run/worker/client.sock
   event_worker:
-    host: 127.0.0.1
-    port: 9002
-    tls: false
+    path: /opt/matrix/run/worker/event.sock
   frontend_proxy:
-    host: 127.0.0.1
-    port: 9003
-    tls: false
+    path: /opt/matrix/run/worker/frontend_proxy.sock
   federation_reader:
-    host: 127.0.0.1
-    port: 9004
-    tls: false
+    path: /opt/matrix/run/worker/federation_reader.sock
   federation_sender:
-    host: 127.0.0.1
-    port: 9005
-    tls: false
+    path: /opt/matrix/run/worker/federation_sender.sock
   appservice_worker:
-    host: 127.0.0.1
-    port: 9006
-    tls: false
+    path: /opt/matrix/run/worker/appservice.sock
   media_worker:
-    host: 127.0.0.1
-    port: 9007
-    tls: false
+    path: /opt/matrix/run/worker/media.sock
   pusher_worker:
-    host: 127.0.0.1
-    port: 9008
-    tls: false
+    path: /opt/matrix/run/worker/pusher.sock
   sync_worker:
-    host: 127.0.0.1
-    port: 9009
-    tls: false
+    path: /opt/matrix/run/worker/sync.sock
   userdir_worker:
-    host: 127.0.0.1
-    port: 9010
-    tls: false
+    path: /opt/matrix/run/worker/userdir.sock
 
 stream_writers:
   events:

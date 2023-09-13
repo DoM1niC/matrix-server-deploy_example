@@ -3,8 +3,7 @@ worker_name: federation_reader
 
 worker_listeners:
   - type: http
-    port: 9004
-    bind_address: '127.0.0.1'
+    path: /opt/matrix/run/worker/federation_reader.sock
     x_forwarded: true
     resources:
       - names: [client, federation, replication]

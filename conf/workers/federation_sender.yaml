@@ -2,10 +2,16 @@ worker_app: synapse.app.generic_worker
 worker_name: federation_sender
 
 worker_listeners:
-    - type: http
-      bind_address: '127.0.0.1'
-      port: 9005
-      resources:
-        - names: [metrics, replication]
+  - type: http
+    path: /opt/matrix/run/worker/federation_sender.sock
+    resources:
+      - names: [replication]
+
+  - type: http
+    bind_address: '127.0.0.1'
+    port: 9005
+    x_forwarded: true
+    resources:
+      - names: [metrics]
 
 worker_daemonize: false
