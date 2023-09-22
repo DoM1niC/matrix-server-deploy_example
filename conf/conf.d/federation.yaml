@@ -3,8 +3,8 @@ allow_public_rooms_over_federation: true
 allow_profile_lookup_over_federation: true
 allow_device_name_lookup_over_federation: false
 federation_verify_certificates: true
-federation_client_minimum_tls_version: 1.1
-federation_rr_transactions_per_room_per_second: 5
+federation_client_minimum_tls_version: "1.2"
+federation_rr_transactions_per_room_per_second: 15
 #federation_metrics_domains:
 #  - matrix.org
 #federation_domain_whitelist:
